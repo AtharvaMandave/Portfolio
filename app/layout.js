@@ -4,12 +4,12 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata = {
-  title: "Your Name | Computer Engineering Student | Full-Stack Developer",
+  title: "Atharva Mandave | Computer Engineering Student | Full-Stack Developer",
   description: "Portfolio of a 3rd-year Computer Engineering student specializing in full-stack development and AI projects. Explore my projects, skills, and achievements.",
   keywords: "Computer Engineering, Full-Stack Developer, AI Projects, React, Next.js, Node.js, Portfolio, Internship",
-  authors: [{ name: "Your Name" }],
+  authors: [{ name: "Atharva Mandave" }],
   openGraph: {
-    title: "Your Name | Computer Engineering Student",
+    title: "Atharva Mandave | Computer Engineering Student",
     description: "Portfolio showcasing full-stack development and AI projects",
     type: "website",
   },
