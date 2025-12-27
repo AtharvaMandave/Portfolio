@@ -7,9 +7,8 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     const socialLinks = [
-        { icon: <FaGithub />, url: "https://github.com/yourusername", label: "GitHub" },
+        { icon: <FaGithub />, url: "https://github.com/AtharvaMandave", label: "GitHub" },
         { icon: <FaLinkedin />, url: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-        { icon: <FaTwitter />, url: "https://twitter.com/yourusername", label: "Twitter" }
     ];
 
     const quickLinks = [
@@ -72,21 +71,21 @@ export default function Footer() {
                         <ul className="space-y-2 text-gray-400">
                             <li>
                                 <a
-                                    href="mailto:your.email@example.com"
+                                    href="mailto:atharvamandave1@gmail.com"
                                     className="hover:text-green-500 transition-colors"
                                 >
-                                    your.email@example.com
+                                    atharvamandave1@gmail.com
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="tel:+919876543210"
+                                    href="tel:+919403657120"
                                     className="hover:text-green-500 transition-colors"
                                 >
-                                    +91 98765 43210
+                                    +91 9403657120
                                 </a>
                             </li>
-                            <li>City, State, India</li>
+                            <li>Pune, Maharashtra, India</li>
                         </ul>
                     </div>
                 </div>
@@ -95,15 +94,8 @@ export default function Footer() {
                 <div className="border-t border-gray-800 pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <p className="text-gray-400 text-sm text-center md:text-left">
-                            © {currentYear} YourName. All rights reserved.
+                            © {currentYear} Atharva Mandave. All rights reserved.
                         </p>
-                        <div className="flex items-center gap-2 text-gray-400 text-sm">
-                            <span>Built with</span>
-                            <FaHeart className="text-red-500" />
-                            <span>using</span>
-                            <SiNextdotjs className="text-xl" />
-                            <span>Next.js</span>
-                        </div>
                     </div>
                 </div>
             </div>

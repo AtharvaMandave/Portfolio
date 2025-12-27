@@ -3,8 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { HiBriefcase, HiAcademicCap, HiStar } from 'react-icons/hi';
-import { HiTrophy } from 'react-icons/hi2';
+import { HiBriefcase } from 'react-icons/hi';
 
 export default function Experience() {
     const ref = useRef(null);
@@ -14,76 +13,13 @@ export default function Experience() {
         {
             type: "internship",
             icon: <HiBriefcase />,
-            title: "Software Development Intern",
-            organization: "Tech Company Name",
-            duration: "Jun 2024 - Aug 2024",
+            title: "Full Stack Developer",
+            organization: "Vighnaharta Techfabrica Innovations LLP",
+            duration: "Aug 2025 – Oct 2025",
             description: [
-                "Developed and deployed 3 full-stack features using React and Node.js",
-                "Optimized database queries, reducing response time by 40%",
-                "Collaborated with cross-functional teams in Agile environment",
-                "Wrote comprehensive unit tests achieving 85% code coverage"
-            ]
-        },
-        {
-            type: "hackathon",
-            icon: <HiTrophy />,
-            title: "Smart India Hackathon - Winner",
-            organization: "Government of India",
-            duration: "Mar 2024",
-            description: [
-                "Built AI-powered solution for traffic management in 36 hours",
-                "Led team of 6 developers and coordinated project delivery",
-                "Presented solution to industry experts and government officials",
-                "Won ₹1,00,000 prize and recognition certificate"
-            ]
-        },
-        {
-            type: "hackathon",
-            icon: <HiTrophy />,
-            title: "University Hackathon - 2nd Place",
-            organization: "Your University",
-            duration: "Nov 2023",
-            description: [
-                "Developed healthcare chatbot using NLP and machine learning",
-                "Integrated with hospital database for real-time appointment booking",
-                "Achieved 90% accuracy in symptom prediction"
-            ]
-        },
-        {
-            type: "certification",
-            icon: <HiAcademicCap />,
-            title: "Full-Stack Web Development",
-            organization: "Coursera - Meta",
-            duration: "Completed: Aug 2023",
-            description: [
-                "Comprehensive course covering React, Node.js, and databases",
-                "Built 5+ real-world projects with industry best practices",
-                "Earned professional certificate with distinction"
-            ]
-        },
-        {
-            type: "certification",
-            icon: <HiAcademicCap />,
-            title: "Machine Learning Specialization",
-            organization: "Coursera - Stanford University",
-            duration: "Completed: Dec 2023",
-            description: [
-                "Learned supervised and unsupervised learning algorithms",
-                "Implemented neural networks and deep learning models",
-                "Applied ML to real-world datasets and problems"
-            ]
-        },
-        {
-            type: "achievement",
-            icon: <HiStar />,
-            title: "Open Source Contributor",
-            organization: "Various Projects",
-            duration: "2023 - Present",
-            description: [
-                "Contributed to 10+ open-source projects on GitHub",
-                "Fixed bugs and added features to popular repositories",
-                "Collaborated with developers worldwide",
-                "Maintained 4.8/5.0 contributor rating"
+                "Architected and developed a full-stack web platform using Next.js, React, Node.js, and MongoDB to manage research paper submissions and reviews efficiently",
+                "Created a multi-role review workflow for authors, reviewers, and editors, improving coordination and reducing review time by approximately 40%",
+                "Deployed the application using Hostinger, maintaining scalability and reliability within an Agile development setup using GitHub"
             ]
         }
     ];
@@ -91,9 +27,6 @@ export default function Experience() {
     const getTypeColor = (type) => {
         switch (type) {
             case 'internship': return 'bg-blue-100 text-blue-700 border-blue-300';
-            case 'hackathon': return 'bg-purple-100 text-purple-700 border-purple-300';
-            case 'certification': return 'bg-green-100 text-green-700 border-green-300';
-            case 'achievement': return 'bg-orange-100 text-orange-700 border-orange-300';
             default: return 'bg-gray-100 text-gray-700 border-gray-300';
         }
     };
@@ -111,13 +44,13 @@ export default function Experience() {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="section-title">Experience & Achievements</h2>
+                    <h2 className="section-title">Professional Experience</h2>
                     <p className="section-subtitle">
-                        Continuous learning and practical application
+                        Practical work experience and industry exposure
                     </p>
 
-                    <div className="max-w-5xl mx-auto">
-                        <div className="grid md:grid-cols-2 gap-6">
+                    <div className="max-w-4xl mx-auto">
+                        <div className="grid gap-6">
                             {experiences.map((exp, index) => (
                                 <motion.div
                                     key={index}
@@ -135,9 +68,9 @@ export default function Experience() {
                                         </div>
                                         <div className="flex-1">
                                             <div className="flex items-center gap-2 mb-2">
-                                                <span className={`text-xs font-semibold px-2 py-1 rounded-full border ${getTypeColor(exp.type)}`}>
+                                                {/* <span className={`text-xs font-semibold px-2 py-1 rounded-full border ${getTypeColor(exp.type)}`}>
                                                     {getTypeLabel(exp.type)}
-                                                </span>
+                                                </span> */}
                                             </div>
                                             <h3 className="text-lg font-bold text-gray-900 mb-1">
                                                 {exp.title}
@@ -169,3 +102,4 @@ export default function Experience() {
         </section>
     );
 }
+
