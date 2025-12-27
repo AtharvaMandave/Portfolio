@@ -77,7 +77,7 @@ export default function Hero() {
                             <HiCode className="text-xl" />
                             View Projects
                         </a>
-                        <a href="/resume.pdf" download className="btn-secondary flex items-center gap-2">
+                        <a href="/Resume.pdf" download className="btn-secondary flex items-center gap-2">
                             <HiDownload className="text-xl" />
                             Download Resume
                         </a>

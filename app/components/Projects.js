@@ -194,57 +194,74 @@ export default function Projects() {
         }
         ,
         {
-    "name": "Taste-Buddies",
-    "icon": "🍕",
-    "highlight": true,
-    "problem": "Food enthusiasts often find it difficult to discover authentic dining experiences and share reliable reviews within a dedicated, community-driven social circle, leading to 'review fatigue' on generic platforms.",
-    "techStack": [
-        "React.js",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Tailwind CSS",
-        "Firebase/JWT (Authentication)",
-        "Google Maps API (Location Services)"
-    ],
-    "features": [
-        "Social discovery engine for trending restaurants and hidden culinary gems",
-        "Personalized user food journals to track dining history and favorite spots",
-        "Interactive review system with high-fidelity image uploads and ratings",
-        "Community feed for real-time updates from followed foodies and local trends",
-        "Map-based exploration for visual discovery of nearby dining options",
-        "Responsive UI/UX optimized for mobile-first food blogging and on-the-go searches",
-        "Secure user authentication and profile management for a personalized experience"
-    ],
-    "architecture": {
-        "frontend": "React.js/Next.js SPA with Tailwind CSS for high-performance visual rendering",
-        "backend": "Node.js & Express RESTful API managing business logic and social interactions",
-        "database": "MongoDB for flexible document storage of menus, reviews, and user metadata",
-        "auth": "Firebase or JWT-based secure session handling and user verification",
-        "integrations": "Cloudinary/AWS S3 for image hosting and Google Maps for spatial data"
-    },
-    "impact": "Empowers users to transform their dining habits into a social experience, increasing local business visibility and fostering a trusted community of reviewers.",
-    "learning": "Deep dive into building CRUD-heavy social platforms, managing complex NoSQL relationships (users vs. reviews), and implementing geo-spatial data visualization.",
-    "github": "https://github.com/AtharvaMandave/Taste-Buddies",
-    "demo": null
-},
-        {
-            name: "Weather Forecasting Dashboard",
-            problem: "Users need accurate, visually appealing weather data with historical trends and predictions.",
-            techStack: ["React", "Chart.js", "OpenWeather API", "Tailwind CSS"],
-            features: [
-                "7-day weather forecast",
-                "Historical weather data visualization",
-                "Location-based auto-detection",
-                "Interactive charts and graphs",
-                "Responsive and accessible design"
+            "name": "Taste-Buddies",
+            "icon": "🍕",
+            "highlight": true,
+            "problem": "Food enthusiasts often find it difficult to discover authentic dining experiences and share reliable reviews within a dedicated, community-driven social circle, leading to 'review fatigue' on generic platforms.",
+            "techStack": [
+                "React.js",
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "Tailwind CSS",
+                "Firebase/JWT (Authentication)",
+                "Google Maps API (Location Services)"
             ],
-            impact: "50,000+ API calls handled monthly with 99.9% uptime",
-            learning: "Mastered API integration, data visualization, and performance optimization",
-            github: "https://github.com/yourusername/weather-dashboard",
-            demo: "https://weather-dashboard-demo.vercel.app",
-            highlight: false,
-            icon: null
+            "features": [
+                "Social discovery engine for trending restaurants and hidden culinary gems",
+                "Personalized user food journals to track dining history and favorite spots",
+                "Interactive review system with high-fidelity image uploads and ratings",
+                "Community feed for real-time updates from followed foodies and local trends",
+                "Map-based exploration for visual discovery of nearby dining options",
+                "Responsive UI/UX optimized for mobile-first food blogging and on-the-go searches",
+                "Secure user authentication and profile management for a personalized experience"
+            ],
+            "architecture": {
+                "frontend": "React.js/Next.js SPA with Tailwind CSS for high-performance visual rendering",
+                "backend": "Node.js & Express RESTful API managing business logic and social interactions",
+                "database": "MongoDB for flexible document storage of menus, reviews, and user metadata",
+                "auth": "Firebase or JWT-based secure session handling and user verification",
+                "integrations": "Cloudinary/AWS S3 for image hosting and Google Maps for spatial data"
+            },
+            "impact": "Empowers users to transform their dining habits into a social experience, increasing local business visibility and fostering a trusted community of reviewers.",
+            "learning": "Deep dive into building CRUD-heavy social platforms, managing complex NoSQL relationships (users vs. reviews), and implementing geo-spatial data visualization.",
+            "github": "https://github.com/AtharvaMandave/Taste-Buddies",
+            "demo": null
+        },
+        {
+            "name": "SMEe - Multi-tenant Website Builder",
+            "icon": "⚙️",
+            "highlight": true,
+            "problem": "Small and Medium Enterprises (SMEs) often lack the technical expertise or budget to build professional websites, resulting in a poor digital presence and lost business opportunities.",
+            "techStack": [
+                "Next.js 15",
+                "React 19",
+                "Tailwind CSS",
+                "Node.js",
+                "MongoDB & Mongoose",
+                "Clerk (Auth)",
+                "Vercel"
+            ],
+            "features": [
+                "Multi-tenant architecture ensuring strict data isolation between different business entities",
+                "Dynamic No-Code website generator with industry-specific professional templates",
+                "Real-time preview engine allowing users to visualize changes across mobile and desktop modes",
+                "One-click deployment system for instant publishing to business-specific subdirectories",
+                "Comprehensive business metadata management (Socials, Contact, Industry categorization)",
+                "Secure User Authentication and Role-Based Access Control (RBAC) powered by Clerk",
+                "Scalable API layer for CRUD operations on company profiles and template seeding"
+            ],
+            "architecture": {
+                "dataSources": ["User Input Forms", "Industry-specific Templates"],
+                "backend": "Node.js with Next.js API Routes for multi-tenant logic and activity logging",
+                "frontend": "Next.js 15 App Router for dashboard, live previews, and dynamic site rendering",
+                "database": "MongoDB for persistent storage of tenant configurations and template schemas",
+                "auth": "Clerk for seamless identity management and secure tenant onboarding"
+            },
+            "impact": "Democratizes web presence for SMEs by providing a low-cost, high-speed alternative to traditional web agencies, enabling instant digital transformation.",
+            "learning": "Mastered complex multi-tenant routing patterns in Next.js, implementing secure NoSQL data modeling for SaaS, and integrating third-party auth providers at scale.",
+            "github": "https://github.com/AtharvaMandave/SME",
+            "demo": null
         }
     ];
 
