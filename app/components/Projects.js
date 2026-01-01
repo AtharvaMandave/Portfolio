@@ -142,6 +142,8 @@ export default function Projects() {
         ,
         {
             name: "AI-Powered Debugging & Coding Challenge Platform",
+            image: "/p5.png",
+            imageAlt: "Hospital queue management system interface",
             problem: "Developers often struggle with slow debugging cycles, unclear error explanations, and lack of proactive bug detection, especially when working with complex logic or learning new concepts.",
             techStack: [
                 "React",
@@ -174,6 +176,8 @@ export default function Projects() {
         },
         {
             "name": "Productivity AI System",
+            image: "/p6.png",
+            imageAlt: "Hospital queue management system interface",
             "problem": "Users struggle to measure digital productivity accurately across browsers and desktop applications, leading to poor time management, decreased focus, and unoptimized work patterns.",
             "techStack": [
                 "Node.js",
@@ -211,7 +215,7 @@ export default function Projects() {
         ,
         {
             "name": "Taste-Buddies",
-            "image": "/p6.png",
+            "image": "/p7.png",
             "imageAlt": "Taste Buddies food review platform interface",
             "icon": "🍕",
             "highlight": true,
@@ -248,6 +252,8 @@ export default function Projects() {
         },
         {
             "name": "SMEe - Multi-tenant Website Builder",
+            image: "/p8.png",
+            imageAlt: "Hospital queue management system interface",
             "icon": "⚙️",
             "highlight": true,
             "problem": "Small and Medium Enterprises (SMEs) often lack the technical expertise or budget to build professional websites, resulting in a poor digital presence and lost business opportunities.",
