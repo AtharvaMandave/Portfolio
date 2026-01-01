@@ -33,65 +33,67 @@ export default function About() {
     ];
 
     return (
-        <section id="about" className="section-padding bg-white">
+        <section id="about" className="section-padding relative">
             <div className="container-custom">
                 <motion.div
                     ref={ref}
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="section-title">About Me</h2>
+                    <h2 className="section-title">
+                        About <span className="accent-text">Me</span>
+                    </h2>
                     <p className="section-subtitle">
                         Building the future, one line of code at a time
                     </p>
 
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        {/* Left: Introduction */}
+                    <div className="grid md:grid-cols-2 gap-12 items-start">
+                        {/* Main content */}
                         <motion.div
-                            initial={{ opacity: 0, x: -50 }}
+                            initial={{ opacity: 0, x: -20 }}
                             animate={isInView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.6, delay: 0.2 }}
+                            className="card-pro space-y-6"
                         >
-                            <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                                I'm a 3rd-year Computer Engineering student with a passion for creating
+                            <p className="text-gray-300 text-lg leading-relaxed">
+                                I'm a <span className="accent-text font-semibold">3rd-year Computer Engineering student</span> with a passion for creating
                                 innovative solutions through code. My journey in tech has been driven by
                                 curiosity and a desire to solve real-world problems.
                             </p>
-                            <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                            <p className="text-gray-300 text-lg leading-relaxed">
                                 With hands-on experience in full-stack development and AI projects, I've
                                 developed a strong foundation in both frontend and backend technologies.
                                 I believe in writing clean, maintainable code and following best practices.
                             </p>
-                            <p className="text-gray-700 text-lg leading-relaxed">
-                                Currently seeking internship opportunities where I can contribute my skills,
-                                learn from experienced professionals, and grow as a developer. I'm eager to
-                                take on challenging projects and make a meaningful impact.
+                            <p className="text-gray-300 text-lg leading-relaxed">
+                                Currently seeking <span className="accent-text font-semibold">internship opportunities</span> where I can contribute my skills,
+                                learn from experienced professionals, and grow as a developer.
                             </p>
                         </motion.div>
 
-                        {/* Right: Highlights Grid */}
+                        {/* Highlights grid */}
                         <motion.div
-                            initial={{ opacity: 0, x: 50 }}
+                            initial={{ opacity: 0, x: 20 }}
                             animate={isInView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.6, delay: 0.4 }}
-                            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+                            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
                         >
                             {highlights.map((item, index) => (
                                 <motion.div
                                     key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                    transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                                    className="card text-center hover:border-green-500"
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                                    transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
+                                    className="card-pro text-center group"
                                 >
-                                    <div className="text-green-600 mb-3 flex justify-center">
+                                    <div className="text-indigo-400 mb-3 flex justify-center group-hover:scale-110 transition-transform">
                                         {item.icon}
                                     </div>
-                                    <h3 className="font-semibold text-lg mb-2 text-gray-900">
+                                    <h3 className="font-semibold text-lg mb-2 text-white">
                                         {item.title}
                                     </h3>
-                                    <p className="text-gray-600 text-sm">
+                                    <p className="text-gray-400 text-sm leading-relaxed">
                                         {item.description}
                                     </p>
                                 </motion.div>

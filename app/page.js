@@ -8,20 +8,23 @@ import Experience from './components/Experience';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import PageTransition from './components/PageTransition';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Education />
-      <Experience />
-      <Achievements />
-      <Contact />
-      <Footer />
-    </main>
+    <PageTransition>
+      <main className="min-h-screen">
+        <Navbar />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Education />
+        <Experience />
+        <Achievements />
+        <Contact />
+        <Footer />
+      </main>
+    </PageTransition>
   );
 }

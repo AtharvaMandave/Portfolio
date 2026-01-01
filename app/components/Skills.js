@@ -100,7 +100,7 @@ export default function Skills() {
     ];
 
     return (
-        <section id="skills" className="section-padding bg-gray-50">
+        <section id="skills" className="section-padding relative">
             <div className="container-custom">
                 <motion.div
                     ref={ref}
@@ -108,7 +108,9 @@ export default function Skills() {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="section-title">Technical Skills</h2>
+                    <h2 className="section-title">
+                        Technical <span className="accent-text">Skills</span>
+                    </h2>
                     <p className="section-subtitle">
                         A comprehensive toolkit for building modern applications
                     </p>
@@ -120,24 +122,40 @@ export default function Skills() {
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-                                className="card hover:border-green-500"
+                                className="card-pro"
                             >
-                                <h3 className="text-xl font-bold mb-6 text-gray-900 border-b-2 border-green-500 pb-2">
+                                <h3 className="text-xl font-bold mb-6 text-white border-b-2 border-indigo-500 pb-2 font-['Space_Grotesk']">
                                     {category.title}
                                 </h3>
                                 <div className="flex flex-wrap gap-3">
                                     {category.skills.map((skill, skillIndex) => (
                                         <motion.div
                                             key={skillIndex}
-                                            whileHover={{ scale: 1.05 }}
-                                            className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-lg border border-gray-200 hover:border-green-500 transition-all"
+                                            initial={{ opacity: 0, scale: 0.8 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            transition={{
+                                                delay: 0.4 + skillIndex * 0.05,
+                                                type: "spring",
+                                                stiffness: 200
+                                            }}
+                                            whileHover={{
+                                                scale: 1.1,
+                                                rotate: 2,
+                                                transition: { duration: 0.2 }
+                                            }}
+                                            whileTap={{ scale: 0.95 }}
+                                            className="flex items-center gap-2 bg-[#13141F] px-4 py-2 rounded-lg border border-gray-700 hover:border-indigo-500 transition-all cursor-pointer"
                                         >
                                             {skill.icon && (
-                                                <span className={`text-2xl ${skill.color}`}>
+                                                <motion.span
+                                                    className={`text-2xl ${skill.color}`}
+                                                    whileHover={{ rotate: 360 }}
+                                                    transition={{ duration: 0.5 }}
+                                                >
                                                     {skill.icon}
-                                                </span>
+                                                </motion.span>
                                             )}
-                                            <span className="font-medium text-gray-700">
+                                            <span className="font-medium text-gray-300">
                                                 {skill.name}
                                             </span>
                                         </motion.div>

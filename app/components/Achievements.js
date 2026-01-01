@@ -103,7 +103,7 @@ export default function Achievements() {
     };
 
     return (
-        <section id="achievements" className="section-padding bg-gray-50">
+        <section id="achievements" className="section-padding relative">
             <div className="container-custom">
                 <motion.div
                     ref={ref}
@@ -111,7 +111,9 @@ export default function Achievements() {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="section-title">Achievements & Certifications</h2>
+                    <h2 className="section-title">
+                        Achievements <span className="accent-text">& Certifications</span>
+                    </h2>
                     <p className="section-subtitle">
                         Recognition and continuous learning milestones
                     </p>
@@ -124,28 +126,28 @@ export default function Achievements() {
                                     initial={{ opacity: 0, y: 30 }}
                                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                                    className="card hover:border-green-500 flex flex-col h-full"
+                                    className="card-pro flex flex-col h-full"
                                 >
                                     {/* Header */}
                                     <div className="flex items-start gap-4 mb-4">
-                                        <div className={`p-3 rounded-lg ${getTypeColor(item.type)}`}>
-                                            <div className="text-2xl">
+                                        <div className="p-3 rounded-lg bg-indigo-500/20 border border-indigo-500/30">
+                                            <div className="text-2xl text-indigo-400">
                                                 {item.icon}
                                             </div>
                                         </div>
                                         <div className="flex-1">
                                             <div className="flex items-center gap-2 mb-2">
-                                                <span className={`text-xs font-semibold px-2 py-1 rounded-full border ${getTypeColor(item.type)}`}>
+                                                <span className="text-xs font-semibold px-2 py-1 rounded-full border bg-indigo-500/20 text-indigo-400 border-indigo-500/30">
                                                     {getTypeLabel(item.type)}
                                                 </span>
                                             </div>
-                                            <h3 className="text-lg font-bold text-gray-900 mb-1">
+                                            <h3 className="text-lg font-bold text-white mb-1 font-['Space_Grotesk']">
                                                 {item.title}
                                             </h3>
-                                            <p className="text-gray-700 font-medium text-sm mb-1">
+                                            <p className="text-indigo-400 font-medium text-sm mb-1">
                                                 {item.organization}
                                             </p>
-                                            <p className="text-gray-500 text-sm">
+                                            <p className="text-gray-400 text-sm">
                                                 {item.duration}
                                             </p>
                                         </div>
@@ -154,8 +156,8 @@ export default function Achievements() {
                                     {/* Description */}
                                     <ul className="space-y-2 mb-4 flex-grow">
                                         {item.description.map((desc, descIndex) => (
-                                            <li key={descIndex} className="text-gray-700 text-sm flex items-start">
-                                                <span className="text-green-600 mr-2 mt-1">•</span>
+                                            <li key={descIndex} className="text-gray-300 text-sm flex items-start">
+                                                <span className="text-indigo-400 mr-2 mt-1">•</span>
                                                 <span>{desc}</span>
                                             </li>
                                         ))}
@@ -168,7 +170,7 @@ export default function Achievements() {
                                                 href={item.link}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-green-600 hover:text-green-700 font-medium text-sm flex items-center gap-1 transition-colors"
+                                                className="text-indigo-400 hover:text-indigo-300 font-medium text-sm flex items-center gap-1 transition-colors"
                                             >
                                                 View Profile ↗
                                             </a>

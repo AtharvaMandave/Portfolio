@@ -1,18 +1,28 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { HiLightningBolt, HiChip } from 'react-icons/hi';
+import { HiLightningBolt, HiChip, HiChevronDown, HiChevronUp } from 'react-icons/hi';
 
 export default function Projects() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const [expandedProjects, setExpandedProjects] = useState({});
+
+    const toggleExpand = (index) => {
+        setExpandedProjects(prev => ({
+            ...prev,
+            [index]: !prev[index]
+        }));
+    };
 
     const projects = [
         {
             name: "ARPS - AI Research Paper Studio",
+            image: "/p1.png",
+            imageAlt: "AI Research Paper Studio interface screenshot",
             problem: "Researchers and students struggle with formatting, structuring, and ensuring quality in academic papers, spending hours on manual formatting and plagiarism checks.",
             techStack: ["Next.js 15", "Python", "FastAPI", "GROQ API", "MongoDB", "Socket.io", "TipTap Editor"],
             features: [
@@ -32,6 +42,8 @@ export default function Projects() {
         },
         {
             "name": "Garbage Classification & Recycling Assistant",
+            "image": "/p2.png",
+            "imageAlt": "Garbage classification app showing waste detection",
             "problem": "Waste segregation is inconsistent due to lack of awareness on recyclable vs non-recyclable materials, leading to inefficiencies in recycling systems and increased environmental pollution.",
             "techStack": [
                 "Python",
@@ -61,6 +73,8 @@ export default function Projects() {
         },
         {
             name: "AI-Based Code Quality Auditor & Architecture Reviewer",
+            image: "/p3.png",
+            imageAlt: "AI Code Quality Auditor dashboard showing analysis results",
             problem: "Developers lack automated, intelligent tools that can deeply understand entire codebases, identify quality, security, performance, and architecture issues, and provide actionable refactoring suggestions like a senior engineer.",
             techStack: [
                 "Next.js 16",
@@ -93,6 +107,8 @@ export default function Projects() {
         ,
         {
             name: "Hospital Patient Visit Tracking & Real-Time Queue Management System",
+            image: "/p4.png",
+            imageAlt: "Hospital queue management system interface",
             problem: "Hospitals struggle with duplicate patient records, inefficient visit tracking, and lack of real-time visibility of patient queues across departments.",
             techStack: [
                 "React",
@@ -195,6 +211,8 @@ export default function Projects() {
         ,
         {
             "name": "Taste-Buddies",
+            "image": "/p6.png",
+            "imageAlt": "Taste Buddies food review platform interface",
             "icon": "🍕",
             "highlight": true,
             "problem": "Food enthusiasts often find it difficult to discover authentic dining experiences and share reliable reviews within a dedicated, community-driven social circle, leading to 'review fatigue' on generic platforms.",
@@ -266,118 +284,294 @@ export default function Projects() {
     ];
 
     return (
-        <section id="projects" className="section-padding bg-white">
+        <section id="projects" className="section-padding relative">
             <div className="container-custom">
                 <motion.div
                     ref={ref}
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="section-title">Featured Projects</h2>
+                    <h2 className="section-title">
+                        Featured <span className="accent-text">Projects</span>
+                    </h2>
                     <p className="section-subtitle">
                         Real-world applications solving meaningful problems
                     </p>
 
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {projects.map((project, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className={`card ${project.highlight ? 'border-2 border-green-500 shadow-lg' : ''}`}
-                            >
-                                {/* Project Header */}
-                                <div className="flex items-start justify-between mb-4">
-                                    <div className="flex items-center gap-3">
-                                        {project.icon && (
-                                            <div className="text-3xl text-green-600">
-                                                {project.icon}
-                                            </div>
-                                        )}
-                                        <h3 className="text-2xl font-bold text-gray-900">
-                                            {project.name}
-                                        </h3>
-                                    </div>
-                                    {project.highlight && (
-                                        <span className="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">
-                                            Featured
-                                        </span>
-                                    )}
-                                </div>
+                    <div className="space-y-8">
+                        {projects.map((project, index) => {
+                            const isExpanded = expandedProjects[index];
+                            const isFeatured = project.highlight;
 
-                                {/* Problem Statement */}
-                                <div className="mb-4">
-                                    <h4 className="font-semibold text-gray-900 mb-2">Problem Statement</h4>
-                                    <p className="text-gray-700 text-sm leading-relaxed">
-                                        {project.problem}
-                                    </p>
-                                </div>
-
-                                {/* Tech Stack */}
-                                <div className="mb-4">
-                                    <h4 className="font-semibold text-gray-900 mb-2">Tech Stack</h4>
-                                    <div className="flex flex-wrap gap-2">
-                                        {project.techStack.map((tech, techIndex) => (
-                                            <span
-                                                key={techIndex}
-                                                className="bg-green-50 text-green-700 text-xs font-medium px-3 py-1 rounded-full border border-green-200"
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    className={`card-pro group overflow-hidden ${isFeatured ? 'border-2 border-indigo-500/40' : ''
+                                        }`}
+                                >
+                                    {/* Featured Ribbon */}
+                                    {isFeatured && (
+                                        <div className="absolute top-4 right-4 z-10">
+                                            <motion.div
+                                                initial={{ scale: 0, rotate: -180 }}
+                                                animate={{ scale: 1, rotate: 0 }}
+                                                transition={{ delay: 0.3 + index * 0.1, type: "spring" }}
+                                                className="px-4 py-1.5 bg-indigo-500 text-white text-xs font-bold rounded-full shadow-lg flex items-center gap-1"
                                             >
-                                                {tech}
-                                            </span>
-                                        ))}
+                                                <HiLightningBolt className="text-sm" />
+                                                FEATURED
+                                            </motion.div>
+                                        </div>
+                                    )}
+
+                                    <div className={`grid ${isFeatured ? 'md:grid-cols-5' : 'md:grid-cols-3'} gap-6`}>
+                                        {/* Project Mockup/Image */}
+                                        <div className={`${isFeatured ? 'md:col-span-2' : 'md:col-span-1'} relative group/img`}>
+                                            <motion.div
+                                                whileHover={{ scale: 1.02 }}
+                                                className="relative h-48 md:h-full min-h-[200px] rounded-lg overflow-hidden"
+                                            >
+                                                {/* Actual Project Image or Gradient Fallback */}
+                                                {project.image ? (
+                                                    <>
+                                                        <img
+                                                            src={project.image}
+                                                            alt={project.imageAlt || project.name}
+                                                            className="absolute inset-0 w-full h-full object-cover"
+                                                        />
+                                                        {/* Dark overlay for better text contrast */}
+                                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        {/* Fallback Gradient Mockup */}
+                                                        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 opacity-80"></div>
+                                                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+
+                                                        {/* Project Icon Overlay */}
+                                                        <div className="absolute inset-0 flex items-center justify-center">
+                                                            <motion.div
+                                                                whileHover={{ rotate: 360 }}
+                                                                transition={{ duration: 0.6 }}
+                                                                className="text-white/40 text-6xl"
+                                                            >
+                                                                {project.icon || '📱'}
+                                                            </motion.div>
+                                                        </div>
+                                                    </>
+                                                )}
+
+                                                {/* Hover Overlay */}
+                                                <motion.div
+                                                    initial={{ opacity: 0 }}
+                                                    whileHover={{ opacity: 1 }}
+                                                    className="absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center gap-4"
+                                                >
+                                                    {project.github && (
+                                                        <motion.a
+                                                            whileHover={{ scale: 1.1 }}
+                                                            whileTap={{ scale: 0.95 }}
+                                                            href={project.github}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="p-3 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/30 transition-colors"
+                                                            onClick={(e) => e.stopPropagation()}
+                                                        >
+                                                            <FaGithub className="text-xl" />
+                                                        </motion.a>
+                                                    )}
+                                                    {project.demo && (
+                                                        <motion.a
+                                                            whileHover={{ scale: 1.1 }}
+                                                            whileTap={{ scale: 0.95 }}
+                                                            href={project.demo}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="p-3 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/30 transition-colors"
+                                                            onClick={(e) => e.stopPropagation()}
+                                                        >
+                                                            <FaExternalLinkAlt className="text-lg" />
+                                                        </motion.a>
+                                                    )}
+                                                </motion.div>
+                                            </motion.div>
+                                        </div>
+
+                                        {/* Project Content */}
+                                        <div className={`${isFeatured ? 'md:col-span-3' : 'md:col-span-2'}`}>
+                                            {/* Header */}
+                                            <div className="mb-4">
+                                                <h3 className="text-2xl font-bold text-white mb-2 font-['Space_Grotesk'] group-hover:text-indigo-400 transition-colors">
+                                                    {project.name}
+                                                </h3>
+
+                                                {/* Tech Stack Pills */}
+                                                <div className="flex flex-wrap gap-2 mb-3">
+                                                    {project.techStack.slice(0, isFeatured ? 8 : 6).map((tech, techIndex) => (
+                                                        <motion.span
+                                                            key={techIndex}
+                                                            initial={{ scale: 0 }}
+                                                            animate={{ scale: 1 }}
+                                                            transition={{ delay: 0.4 + techIndex * 0.05 }}
+                                                            whileHover={{ scale: 1.05, y: -2 }}
+                                                            className="tag text-xs"
+                                                        >
+                                                            {tech}
+                                                        </motion.span>
+                                                    ))}
+                                                    {project.techStack.length > (isFeatured ? 8 : 6) && (
+                                                        <span className="tag text-xs opacity-60">
+                                                            +{project.techStack.length - (isFeatured ? 8 : 6)}
+                                                        </span>
+                                                    )}
+                                                </div>
+                                            </div>
+
+                                            {/* Problem Statement */}
+                                            <div className="mb-4">
+                                                <h4 className="text-sm font-semibold text-indigo-400 mb-2 flex items-center gap-2">
+                                                    <span className="w-1 h-4 bg-indigo-500 rounded"></span>
+                                                    Problem
+                                                </h4>
+                                                <p className="text-gray-300 text-sm leading-relaxed">
+                                                    {project.problem}
+                                                </p>
+                                            </div>
+
+                                            {/* Key Features - Always show 3 */}
+                                            <div className="mb-4">
+                                                <h4 className="text-sm font-semibold text-indigo-400 mb-2 flex items-center gap-2">
+                                                    <span className="w-1 h-4 bg-indigo-500 rounded"></span>
+                                                    Key Features
+                                                </h4>
+                                                <ul className="space-y-1.5">
+                                                    {project.features.slice(0, 3).map((feature, featureIndex) => (
+                                                        <li key={featureIndex} className="text-gray-300 text-sm flex items-start">
+                                                            <span className="text-indigo-400 mr-2 mt-0.5">▸</span>
+                                                            <span>{feature}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+
+                                            {/* Expandable Content */}
+                                            <AnimatePresence>
+                                                {isExpanded && (
+                                                    <motion.div
+                                                        initial={{ height: 0, opacity: 0 }}
+                                                        animate={{ height: "auto", opacity: 1 }}
+                                                        exit={{ height: 0, opacity: 0 }}
+                                                        transition={{ duration: 0.3 }}
+                                                        className="overflow-hidden"
+                                                    >
+                                                        {/* Remaining Features */}
+                                                        {project.features.length > 3 && (
+                                                            <div className="mb-4">
+                                                                <ul className="space-y-1.5">
+                                                                    {project.features.slice(3).map((feature, featureIndex) => (
+                                                                        <li key={featureIndex + 3} className="text-gray-300 text-sm flex items-start">
+                                                                            <span className="text-indigo-400 mr-2 mt-0.5">▸</span>
+                                                                            <span>{feature}</span>
+                                                                        </li>
+                                                                    ))}
+                                                                </ul>
+                                                            </div>
+                                                        )}
+
+                                                        {/* All Tech Stack */}
+                                                        {project.techStack.length > (isFeatured ? 8 : 6) && (
+                                                            <div className="mb-4">
+                                                                <h4 className="text-sm font-semibold text-indigo-400 mb-2">Full Tech Stack</h4>
+                                                                <div className="flex flex-wrap gap-2">
+                                                                    {project.techStack.map((tech, techIndex) => (
+                                                                        <span key={techIndex} className="tag text-xs">
+                                                                            {tech}
+                                                                        </span>
+                                                                    ))}
+                                                                </div>
+                                                            </div>
+                                                        )}
+
+                                                        {/* Learning */}
+                                                        {project.learning && (
+                                                            <div className="mb-4 p-4 bg-purple-500/10 rounded-lg border border-purple-500/20">
+                                                                <h4 className="text-sm font-semibold text-purple-400 mb-2">What I Learned</h4>
+                                                                <p className="text-gray-300 text-sm">{project.learning}</p>
+                                                            </div>
+                                                        )}
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
+
+                                            {/* Impact Box */}
+                                            <div className="mb-4 p-3 bg-indigo-500/10 rounded-lg border border-indigo-500/20">
+                                                <h4 className="text-xs font-semibold text-indigo-300 mb-1 flex items-center gap-1">
+                                                    <HiLightningBolt className="text-sm" />
+                                                    Impact
+                                                </h4>
+                                                <p className="text-gray-300 text-sm">{project.impact}</p>
+                                            </div>
+
+                                            {/* Footer Actions */}
+                                            <div className="flex items-center justify-between pt-2 border-t border-white/10">
+                                                <div className="flex gap-4">
+                                                    {project.github && (
+                                                        <motion.a
+                                                            whileHover={{ x: 3 }}
+                                                            href={project.github}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="text-gray-400 hover:text-indigo-400 transition-colors font-medium flex items-center gap-2 text-sm"
+                                                        >
+                                                            <FaGithub className="text-lg" />
+                                                            <span>View Code</span>
+                                                        </motion.a>
+                                                    )}
+                                                    {project.demo && (
+                                                        <motion.a
+                                                            whileHover={{ x: 3 }}
+                                                            href={project.demo}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="text-gray-400 hover:text-indigo-400 transition-colors font-medium flex items-center gap-2 text-sm"
+                                                        >
+                                                            <FaExternalLinkAlt className="text-base" />
+                                                            <span>Live Demo</span>
+                                                        </motion.a>
+                                                    )}
+                                                </div>
+
+                                                {/* View More Button */}
+                                                {(project.features.length > 3 || project.learning) && (
+                                                    <motion.button
+                                                        whileHover={{ scale: 1.05 }}
+                                                        whileTap={{ scale: 0.95 }}
+                                                        onClick={() => toggleExpand(index)}
+                                                        className="text-indigo-400 hover:text-indigo-300 font-medium flex items-center gap-1 text-sm transition-colors"
+                                                    >
+                                                        {isExpanded ? (
+                                                            <>
+                                                                <span>View Less</span>
+                                                                <HiChevronUp className="text-lg" />
+                                                            </>
+                                                        ) : (
+                                                            <>
+                                                                <span>View More</span>
+                                                                <HiChevronDown className="text-lg" />
+                                                            </>
+                                                        )}
+                                                    </motion.button>
+                                                )}
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-
-                                {/* Key Features */}
-                                <div className="mb-4">
-                                    <h4 className="font-semibold text-gray-900 mb-2">Key Features</h4>
-                                    <ul className="space-y-1">
-                                        {project.features.map((feature, featureIndex) => (
-                                            <li key={featureIndex} className="text-gray-700 text-sm flex items-start">
-                                                <span className="text-green-600 mr-2">✓</span>
-                                                {feature}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Impact */}
-                                <div className="mb-4 bg-green-50 p-3 rounded-lg border border-green-200">
-                                    <h4 className="font-semibold text-green-900 mb-1 text-sm">Impact</h4>
-                                    <p className="text-green-800 text-sm">{project.impact}</p>
-                                </div>
-
-                                {/* Learning */}
-                                <div className="mb-6 bg-blue-50 p-3 rounded-lg border border-blue-200">
-                                    <h4 className="font-semibold text-blue-900 mb-1 text-sm">Learning Outcome</h4>
-                                    <p className="text-blue-800 text-sm">{project.learning}</p>
-                                </div>
-
-                                {/* Links */}
-                                <div className="flex gap-4">
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-2 text-gray-700 hover:text-green-600 transition-colors font-medium"
-                                    >
-                                        <FaGithub className="text-xl" />
-                                        <span>Code</span>
-                                    </a>
-                                    <a
-                                        href={project.demo}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-2 text-gray-700 hover:text-green-600 transition-colors font-medium"
-                                    >
-                                        <FaExternalLinkAlt className="text-lg" />
-                                        <span>Live Demo</span>
-                                    </a>
-                                </div>
-                            </motion.div>
-                        ))}
+                                </motion.div>
+                            );
+                        })}
                     </div>
                 </motion.div>
             </div>

@@ -36,7 +36,7 @@ export default function Experience() {
     };
 
     return (
-        <section id="experience" className="section-padding bg-white">
+        <section id="experience" className="section-padding relative">
             <div className="container-custom">
                 <motion.div
                     ref={ref}
@@ -44,7 +44,9 @@ export default function Experience() {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="section-title">Professional Experience</h2>
+                    <h2 className="section-title">
+                        Professional <span className="accent-text">Experience</span>
+                    </h2>
                     <p className="section-subtitle">
                         Practical work experience and industry exposure
                     </p>
@@ -57,12 +59,12 @@ export default function Experience() {
                                     initial={{ opacity: 0, y: 30 }}
                                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                                    className="card hover:border-green-500"
+                                    className="card-pro"
                                 >
                                     {/* Header */}
                                     <div className="flex items-start gap-4 mb-4">
-                                        <div className={`p-3 rounded-lg ${getTypeColor(exp.type)}`}>
-                                            <div className="text-2xl">
+                                        <div className="p-3 rounded-lg bg-indigo-500/20 border border-indigo-500/30">
+                                            <div className="text-2xl text-indigo-400">
                                                 {exp.icon}
                                             </div>
                                         </div>
@@ -72,13 +74,13 @@ export default function Experience() {
                                                     {getTypeLabel(exp.type)}
                                                 </span> */}
                                             </div>
-                                            <h3 className="text-lg font-bold text-gray-900 mb-1">
+                                            <h3 className="text-lg font-bold text-white mb-1 font-['Space_Grotesk']">
                                                 {exp.title}
                                             </h3>
-                                            <p className="text-gray-700 font-medium text-sm mb-1">
+                                            <p className="text-indigo-400 font-medium text-sm mb-1">
                                                 {exp.organization}
                                             </p>
-                                            <p className="text-gray-500 text-sm">
+                                            <p className="text-gray-400 text-sm">
                                                 {exp.duration}
                                             </p>
                                         </div>
@@ -87,8 +89,8 @@ export default function Experience() {
                                     {/* Description */}
                                     <ul className="space-y-2">
                                         {exp.description.map((item, itemIndex) => (
-                                            <li key={itemIndex} className="text-gray-700 text-sm flex items-start">
-                                                <span className="text-green-600 mr-2 mt-1">•</span>
+                                            <li key={itemIndex} className="text-gray-300 text-sm flex items-start">
+                                                <span className="text-indigo-400 mr-2 mt-1">•</span>
                                                 <span>{item}</span>
                                             </li>
                                         ))}

@@ -64,10 +64,10 @@ export default function Education() {
     <section
       ref={ref}
       id="education"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-white"
+      className="section-padding relative"
     >
-      <div className="max-w-5xl mx-auto">
-        
+      <div className="container-custom">
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -75,15 +75,19 @@ export default function Education() {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-3">Education</h2>
-          <div className="w-16 h-1 bg-blue-600"></div>
+          <h2 className="section-title">
+            <span className="accent-text">Education</span>
+          </h2>
+          <p className="section-subtitle">
+            Academic background and qualifications
+          </p>
         </motion.div>
 
         {/* Timeline */}
         <div className="relative">
-          
+
           {/* Vertical line */}
-          <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-200 ml-2"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-px bg-indigo-500/30 ml-2"></div>
 
           {/* Education items */}
           <div className="space-y-12">
@@ -95,35 +99,35 @@ export default function Education() {
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 className="relative pl-10"
               >
-                
+
                 {/* Timeline dot */}
-                <div className="absolute left-0 top-2 w-5 h-5 bg-blue-600 rounded-full border-4 border-white shadow-sm"></div>
+                <div className="absolute left-0 top-2 w-5 h-5 bg-indigo-500 rounded-full border-4 border-[#0A0B14] shadow-sm"></div>
 
                 {/* Card */}
-                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:border-gray-300 transition-colors">
-                  
+                <div className="card-pro">
+
                   {/* Title */}
                   <div className="mb-4">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    <h3 className="text-xl font-semibold text-white mb-2 font-['Space_Grotesk']">
                       {edu.degree}
                     </h3>
-                    <p className="text-gray-700 font-medium mb-1">
+                    <p className="text-indigo-400 font-medium mb-1">
                       {edu.institution}
                     </p>
                     {edu.university && (
-                      <p className="text-sm text-gray-600 mb-1">
+                      <p className="text-sm text-gray-400 mb-1">
                         {edu.university}
                       </p>
                     )}
                     {edu.board && (
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-400">
                         {edu.board}
                       </p>
                     )}
                   </div>
 
                   {/* Meta info */}
-                  <div className="flex flex-wrap gap-4 mb-4 text-sm text-gray-600">
+                  <div className="flex flex-wrap gap-4 mb-4 text-sm text-gray-400">
                     <div className="flex items-center gap-1.5">
                       <HiCalendar className="w-4 h-4" />
                       <span>{edu.duration}</span>
@@ -134,7 +138,7 @@ export default function Education() {
                     </div>
                     <div className="flex items-center gap-1.5">
                       <HiAcademicCap className="w-4 h-4" />
-                      <span className="font-medium text-gray-900">
+                      <span className="font-medium text-white">
                         {edu.score}
                       </span>
                     </div>
@@ -142,11 +146,11 @@ export default function Education() {
 
                   {/* Entrance Exam Percentiles (Only for HSC) */}
                   {(edu.jeePercentile || edu.cetPercentile) && (
-                    <div className="flex flex-wrap gap-6 mb-4 text-sm text-gray-700">
+                    <div className="flex flex-wrap gap-6 mb-4 text-sm text-gray-300">
                       {edu.jeePercentile && (
                         <div>
                           <span className="font-medium">JEE:</span>{" "}
-                          <span className="text-gray-900">
+                          <span className="text-white">
                             {edu.jeePercentile}
                           </span>
                         </div>
@@ -164,7 +168,7 @@ export default function Education() {
 
                   {/* Expected Graduation */}
                   {edu.expectedGraduation && (
-                    <div className="mb-4 text-sm text-gray-600">
+                    <div className="mb-4 text-sm text-gray-400">
                       Expected Graduation:{" "}
                       <span className="font-medium text-gray-900">
                         {edu.expectedGraduation}
@@ -173,21 +177,21 @@ export default function Education() {
                   )}
 
                   {/* Description */}
-                  <p className="text-gray-700 mb-4">
+                  <p className="text-gray-300 mb-4">
                     {edu.description}
                   </p>
 
                   {/* Courses */}
                   {edu.courses.length > 0 && (
                     <div>
-                      <p className="text-sm font-medium text-gray-900 mb-2">
+                      <p className="text-sm font-medium text-white mb-2">
                         Key Subjects:
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {edu.courses.map((course, idx) => (
                           <span
                             key={idx}
-                            className="text-sm px-3 py-1 bg-white border border-gray-200 rounded text-gray-700"
+                            className="tag text-sm"
                           >
                             {course}
                           </span>

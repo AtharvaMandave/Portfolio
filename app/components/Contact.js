@@ -120,7 +120,7 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="section-padding bg-gray-50">
+        <section id="contact" className="section-padding relative">
             <div className="container-custom">
                 <motion.div
                     ref={ref}
@@ -128,7 +128,9 @@ export default function Contact() {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="section-title">Get In Touch</h2>
+                    <h2 className="section-title">
+                        Get In <span className="accent-text">Touch</span>
+                    </h2>
                     <p className="section-subtitle">
                         Let's discuss how I can contribute to your team
                     </p>
@@ -140,10 +142,10 @@ export default function Contact() {
                             animate={isInView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.6, delay: 0.2 }}
                         >
-                            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                            <h3 className="text-2xl font-bold text-white mb-6 font-['Space_Grotesk']">
                                 Contact Information
                             </h3>
-                            <p className="text-gray-700 mb-8 leading-relaxed">
+                            <p className="text-gray-300 mb-8 leading-relaxed">
                                 I'm currently seeking internship opportunities for Summer 2025.
                                 Feel free to reach out if you'd like to discuss potential opportunities,
                                 collaborations, or just want to connect!
@@ -153,20 +155,20 @@ export default function Contact() {
                             <div className="space-y-4 mb-8">
                                 {contactInfo.map((info, index) => (
                                     <div key={index} className="flex items-center gap-4">
-                                        <div className="bg-green-100 p-3 rounded-lg text-green-600 text-xl">
+                                        <div className="bg-indigo-500/20 p-3 rounded-lg text-indigo-400 text-xl border border-indigo-500/30">
                                             {info.icon}
                                         </div>
                                         <div>
-                                            <p className="text-sm text-gray-600">{info.label}</p>
+                                            <p className="text-sm text-gray-400">{info.label}</p>
                                             {info.link ? (
                                                 <a
                                                     href={info.link}
-                                                    className="text-gray-900 font-medium hover:text-green-600 transition-colors"
+                                                    className="text-white font-medium hover:text-indigo-400 transition-colors"
                                                 >
                                                     {info.value}
                                                 </a>
                                             ) : (
-                                                <p className="text-gray-900 font-medium">{info.value}</p>
+                                                <p className="text-white font-medium">{info.value}</p>
                                             )}
                                         </div>
                                     </div>
@@ -175,7 +177,7 @@ export default function Contact() {
 
                             {/* Social Links */}
                             <div>
-                                <h4 className="font-semibold text-gray-900 mb-4">Connect with me</h4>
+                                <h4 className="font-semibold text-white mb-4">Connect with me</h4>
                                 <div className="flex gap-4">
                                     {socialLinks.map((social, index) => (
                                         <a
@@ -183,7 +185,7 @@ export default function Contact() {
                                             href={social.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className={`bg-white p-4 rounded-lg shadow-md text-2xl text-gray-700 transition-all hover:shadow-lg hover:-translate-y-1 ${social.color}`}
+                                            className="card-pro p-4 text-2xl text-gray-300 hover:text-indigo-400 transition-all"
                                             aria-label={social.label}
                                         >
                                             {social.icon}
@@ -199,9 +201,9 @@ export default function Contact() {
                             animate={isInView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.6, delay: 0.4 }}
                         >
-                            <form onSubmit={handleSubmit} className="card">
+                            <form onSubmit={handleSubmit} className="card-pro">
                                 <div className="mb-4">
-                                    <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
+                                    <label htmlFor="name" className="block text-gray-300 font-medium mb-2">
                                         Name *
                                     </label>
                                     <input
@@ -210,7 +212,7 @@ export default function Contact() {
                                         name="name"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-all ${errors.name ? 'border-red-500' : 'border-gray-300'
+                                        className={`w-full px-4 py-3 bg-[#13141F] border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all ${errors.name ? 'border-red-500' : 'border-gray-700'
                                             }`}
                                         placeholder="Your Name"
                                     />
@@ -229,7 +231,7 @@ export default function Contact() {
                                         name="email"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-all ${errors.email ? 'border-red-500' : 'border-gray-300'
+                                        className={`w-full px-4 py-3 bg-[#13141F] border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all ${errors.email ? 'border-red-500' : 'border-gray-700'
                                             }`}
                                         placeholder="your.email@example.com"
                                     />
@@ -248,7 +250,7 @@ export default function Contact() {
                                         name="subject"
                                         value={formData.subject}
                                         onChange={handleChange}
-                                        className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-all ${errors.subject ? 'border-red-500' : 'border-gray-300'
+                                        className={`w-full px-4 py-3 bg-[#13141F] border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all ${errors.subject ? 'border-red-500' : 'border-gray-700'
                                             }`}
                                         placeholder="Subject"
                                     />
@@ -267,7 +269,7 @@ export default function Contact() {
                                         value={formData.message}
                                         onChange={handleChange}
                                         rows="5"
-                                        className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-all resize-none ${errors.message ? 'border-red-500' : 'border-gray-300'
+                                        className={`w-full px-4 py-3 bg-[#13141F] border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all resize-none ${errors.message ? 'border-red-500' : 'border-gray-700'
                                             }`}
                                         placeholder="Your message..."
                                     />
@@ -277,7 +279,7 @@ export default function Contact() {
                                 </div>
 
                                 {submitStatus === 'success' && (
-                                    <div className="mb-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
+                                    <div className="mb-4 bg-indigo-500/20 border border-indigo-500 text-indigo-400 px-4 py-3 rounded-lg">
                                         Thank you! Your message has been sent successfully.
                                     </div>
                                 )}
