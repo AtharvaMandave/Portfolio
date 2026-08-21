@@ -133,7 +133,7 @@ export default function WorkspaceRoom() {
             >
               <div className="md:col-span-2 space-y-4 text-sm text-[#A09E96] leading-relaxed">
                 <p className="text-base text-[#E8E2D3] font-mono font-medium">
-                  <span className="text-[#B7FF4A]">❯</span> ATHARVA MANDAVE // 3RD-YEAR COMPUTER ENGINEERING
+                  <span className="text-[#B7FF4A]">❯</span> ATHARVA MANDAVE // Final YEAR COMPUTER ENGINEERING
                 </p>
                 <p>
                   I approach software engineering with a curious and rigorous experimental mindset. Rather than simply writing code, I build comprehensive systems that bridge complex backend architectures with intelligent AI models and high-utility interfaces.
@@ -162,7 +162,7 @@ export default function WorkspaceRoom() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-[#6E6E68]">PROBLEMS SOLVED:</span>
-                  <span className="text-[#E8E2D3] font-bold">340+ LEETCODE</span>
+                  <span className="text-[#E8E2D3] font-bold">500+ LEETCODE</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-[#6E6E68]">HACKATHONS:</span>
@@ -170,7 +170,7 @@ export default function WorkspaceRoom() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-[#6E6E68]">PRIMARY ENGINE:</span>
-                  <span className="text-[#E8E2D3]">NEXT.JS & PYTHON</span>
+                  <span className="text-[#E8E2D3]">Java & PYTHON</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-[#6E6E68]">CODE DISCIPLINE:</span>

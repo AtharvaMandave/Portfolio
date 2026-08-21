@@ -41,9 +41,9 @@ export default function Home() {
       { id: 'projects', room: '02_PROJECT_LAB' },
       { id: 'ai-core', room: '03_AI_CORE' },
       { id: 'tech-wall', room: '04_TECH_WALL' },
-      { id: 'experiments', room: '05_EXPERIMENTS' },
-      { id: 'achievements', room: '06_ACHIEVEMENTS' },
-      { id: 'transmission', room: '07_TRANSMISSION' },
+      // { id: 'experiments', room: '05_EXPERIMENTS' },
+      { id: 'achievements', room: '05_ACHIEVEMENTS' },
+      { id: 'transmission', room: '06_TRANSMISSION' },
     ];
 
     const handleScroll = () => {
@@ -101,7 +101,7 @@ export default function Home() {
         <TechMatrixRoom />
 
         {/* Room 05: The Experiment Archive & Research Dossiers */}
-        <ExperimentsArchiveRoom />
+        {/* <ExperimentsArchiveRoom /> */}
 
         {/* Room 06: The Achievement Vault & 3D Tilt Cards */}
         <AchievementsVaultRoom />

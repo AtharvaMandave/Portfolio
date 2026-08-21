@@ -57,7 +57,7 @@ export default function About() {
                             className="card-pro space-y-6"
                         >
                             <p className="text-gray-300 text-lg leading-relaxed">
-                                I'm a <span className="accent-text font-semibold">3rd-year Computer Engineering student</span> with a passion for creating
+                                I'm a <span className="accent-text font-semibold">Final Year Computer Engineering student</span> with a passion for creating
                                 innovative solutions through code. My journey in tech has been driven by
                                 curiosity and a desire to solve real-world problems.
                             </p>

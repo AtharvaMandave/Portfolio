@@ -20,7 +20,7 @@ export default function LabCanvas3D({ activeRoom = '01_WORKSPACE', is3DEnabled =
       '02_PROJECT_LAB': { x: -4, y: -2, z: 12, rotX: 0.1, rotY: -0.15 },
       '03_AI_CORE': { x: 0, y: 3, z: 10, rotX: -0.2, rotY: 0 },
       '04_TECH_WALL': { x: 4, y: -1, z: 13, rotX: 0.05, rotY: 0.2 },
-      '05_EXPERIMENTS': { x: -3, y: 2, z: 12, rotX: -0.1, rotY: -0.1 },
+      // '05_EXPERIMENTS': { x: -3, y: 2, z: 12, rotX: -0.1, rotY: -0.1 },
       '06_ACHIEVEMENTS': { x: 3, y: 1, z: 11, rotX: 0.1, rotY: 0.1 },
       '07_TRANSMISSION': { x: 0, y: -3, z: 13, rotX: 0.15, rotY: 0 },
     };

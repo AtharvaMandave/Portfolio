@@ -23,9 +23,9 @@ export default function LabHUD({ activeRoom, onSelectRoom, isAudioOn, onToggleAu
     { id: '02_PROJECT_LAB', label: '02_PROJECTS', anchor: 'projects' },
     { id: '03_AI_CORE', label: '03_AI_CORE', anchor: 'ai-core' },
     { id: '04_TECH_WALL', label: '04_TECH_WALL', anchor: 'tech-wall' },
-    { id: '05_EXPERIMENTS', label: '05_EXPERIMENTS', anchor: 'experiments' },
-    { id: '06_ACHIEVEMENTS', label: '06_AWARDS', anchor: 'achievements' },
-    { id: '07_TRANSMISSION', label: '07_TRANSMIT', anchor: 'transmission' },
+    // { id: '05_EXPERIMENTS', label: '05_EXPERIMENTS', anchor: 'experiments' },
+    { id: '05_ACHIEVEMENTS', label: '05_AWARDS', anchor: 'achievements' },
+    { id: '06_TRANSMISSION', label: '06_TRANSMIT', anchor: 'transmission' },
   ];
 
   const handleRoomClick = (room) => {
