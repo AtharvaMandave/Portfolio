@@ -129,25 +129,44 @@ export default function ProjectLabRoom() {
       demo: null
     },
     {
-      id: "06",
-      code: "PROJ_06",
-      title: "Multi Agent Research Assistant",
-      category: "LangGraph & NLP",
-      summary: "Search the most relevant documents from the internet regarding that topic generates topics subtopics and generates article with confidence score and contradictions in research if any.",
-      image: "/p5.png",
-      problem: "Beginner ",
-      architecture: [
-        { step: "MULTI-MODAL IN", desc: "Voice Input + Visual Code Analysis" },
-        { step: "STATIC INFER", desc: "Predictive Logic Trap Detection" },
-        { step: "AI RESOLUTION", desc: "Gemini Structured Explanations" },
-        { step: "GAMIFICATION", desc: "Live XP Leaderboards via WebSockets" }
-      ],
-      techStack: ["Next.js", "Python", "lama 3.3 70b", "LangGraph", "PostGreSQL"],
-      impact: "National Finalist at Innohack 2.0 for innovative AI-assisted pedagogy and multi-modal developer accessibility.",
-      learning: "Built multi-modal streaming web speech connectors, structured AI fallback parsers, and gamified real-time challenge runners.",
-      github: "https://github.com/AtharvaMandave",
-      demo: null
-    },
+id: "06",
+code: "PROJ_06_RESEARCHMIND_AI",
+title: "RESEARCHMIND AI — AUTONOMOUS RESEARCH ORCHESTRATION PLATFORM",
+category: "AI & MULTI-AGENT SYSTEMS",
+summary: "Autonomous multi-agent research platform that plans research scope, searches and indexes web sources, evaluates reliability, detects contradictions, identifies research gaps, and generates citation-backed reports and presentations.",
+status: "COMPLETED",
+image: "/p6.png",
+problem: "Researching complex topics manually requires searching across multiple sources, evaluating their reliability, resolving conflicting claims, organizing evidence, and converting findings into structured reports and presentations.",
+architecture: [
+{ step: "RESEARCH PLAN", desc: "Planner Agent decomposes topics into objectives, subtopics, and searchable questions" },
+{ step: "WEB RESEARCH", desc: "Researcher Agent searches, crawls, chunks, and embeds web sources using Tavily + HuggingFace" },
+{ step: "VERIFY & CRITIQUE", desc: "Critic Agent scores source reliability and detects factual contradictions" },
+{ step: "RAG GENERATION", desc: "Writer Agent retrieves relevant evidence and generates citation-backed Markdown reports" },
+{ step: "QUALITY LOOP", desc: "Reviewer Agent scores confidence, identifies research gaps, and triggers iterative re-planning" },
+{ step: "EXPORT & STREAM", desc: "Generates PowerPoint presentations while streaming agent progress through WebSockets" }
+],
+techStack: [
+"Next.js",
+"FastAPI",
+"Python",
+"LangGraph",
+"LangChain",
+"Llama 3.3 70B",
+"Groq",
+"Tavily",
+"HuggingFace",
+"PostgreSQL",
+"pgvector",
+"SQLAlchemy",
+"WebSockets",
+"python-pptx"
+],
+impact: "Built an end-to-end autonomous research pipeline capable of transforming a single research topic into structured research objectives, verified sources, contradiction analysis, research gaps, a citation-backed report, and a generated presentation.",
+learning: "Designed stateful multi-agent workflows with LangGraph, implemented RAG using PostgreSQL and pgvector, built source reliability and contradiction analysis pipelines, integrated PDF ingestion, created iterative AI review loops, and implemented real-time WebSocket progress streaming.",
+github: "https://github.com/AtharvaMandave",
+demo: null
+}
+,
     {
   id: "07",
   code: "PROJ_07_TICKETBOOK",
