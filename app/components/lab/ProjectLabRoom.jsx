@@ -127,7 +127,62 @@ export default function ProjectLabRoom() {
       learning: "Built multi-modal streaming web speech connectors, structured AI fallback parsers, and gamified real-time challenge runners.",
       github: "https://github.com/AtharvaMandave",
       demo: null
-    }
+    },
+    {
+      id: "06",
+      code: "PROJ_06",
+      title: "Multi Agent Research Assistant",
+      category: "LangGraph & NLP",
+      summary: "Search the most relevant documents from the internet regarding that topic generates topics subtopics and generates article with confidence score and contradictions in research if any.",
+      image: "/p5.png",
+      problem: "Beginner ",
+      architecture: [
+        { step: "MULTI-MODAL IN", desc: "Voice Input + Visual Code Analysis" },
+        { step: "STATIC INFER", desc: "Predictive Logic Trap Detection" },
+        { step: "AI RESOLUTION", desc: "Gemini Structured Explanations" },
+        { step: "GAMIFICATION", desc: "Live XP Leaderboards via WebSockets" }
+      ],
+      techStack: ["Next.js", "Python", "lama 3.3 70b", "LangGraph", "PostGreSQL"],
+      impact: "National Finalist at Innohack 2.0 for innovative AI-assisted pedagogy and multi-modal developer accessibility.",
+      learning: "Built multi-modal streaming web speech connectors, structured AI fallback parsers, and gamified real-time challenge runners.",
+      github: "https://github.com/AtharvaMandave",
+      demo: null
+    },
+    {
+  id: "07",
+  code: "PROJ_07_TICKETBOOK",
+  title: "TICKETBOOK — REAL-TIME TICKET BOOKING PLATFORM",
+  category: "FULL-STACK & DISTRIBUTED SYSTEMS",
+  summary: "High-concurrency ticket booking platform designed to handle thousands of simultaneous seat selections with atomic locking, automated waitlists, and real-time seat synchronization.",
+  status: "COMPLETED",
+  image: "/p71.png",
+  problem: "Traditional ticket booking systems can suffer from double-booking, stale seat availability, and inconsistent states when many users attempt to reserve the same seats simultaneously.",
+  architecture: [
+    { step: "REQUEST", desc: "Fastify API + JWT Authentication + Zod Validation" },
+    { step: "ATOMIC LOCK", desc: "Redis Lua Scripts for Race-Free Multi-Seat Reservations" },
+    { step: "PERSISTENCE", desc: "PostgreSQL Transactions with Database-Level Validation" },
+    { step: "ASYNC ENGINE", desc: "BullMQ Workers for Hold Expiry, Emails & Waitlist Automation" },
+    { step: "REAL-TIME", desc: "Socket.IO Live Seat Map Synchronization" }
+  ],
+  techStack: [
+    "React",
+    "TypeScript",
+    "Node.js",
+    "Fastify",
+    "PostgreSQL",
+    "Redis",
+    "BullMQ",
+    "Socket.io",
+    "Knex.js",
+    "Zod",
+    "JWT",
+    "Docker"
+  ],
+  impact: "Built a production-oriented booking architecture that prevents double-booking through atomic Redis locks and PostgreSQL transaction safeguards while supporting real-time seat updates and automated waitlist processing.",
+  learning: "Designed distributed concurrency control using Redis Lua scripts, implemented double-layer seat expiry with Redis TTL and BullMQ, built FIFO waitlist cascades, asynchronous email processing, QR ticket generation, and real-time WebSocket synchronization.",
+  github: "[https://github.com/AtharvaMandave](https://github.com/AtharvaMandave)",
+  demo: "https://ticket-booking-platform-sigma.vercel.app/"
+}
   ];
 
   const handleOpenCaseStudy = (proj) => {

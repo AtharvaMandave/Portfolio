@@ -62,7 +62,7 @@ export default function TechMatrixRoom() {
       name: "CS FOUNDATIONS & TOOLS",
       color: "text-[#6E6E68]",
       nodes: [
-        { name: "DSA (340+ Solved)", icon: null, tag: "LEETCODE", connections: ["Java", "Python"] },
+        { name: "DSA (500+ Solved)", icon: null, tag: "LEETCODE", connections: ["Java", "Python"] },
         { name: "Git / GitHub", icon: <SiGit />, tag: "VCS", connections: ["Next.js 16", "Python"] },
         { name: "Postman", icon: <SiPostman />, tag: "TESTING", connections: ["FastAPI", "Express.js"] },
         { name: "Computer Networks", icon: null, tag: "CCNA", connections: ["Socket.io", "Node.js"] },
